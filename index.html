@@ -43,6 +43,160 @@
 					<h1>Angular Brown Bag Session</h1>
 					<img src="./img/angular-logo.png" alt="">
 				</section>
+
+				<section>
+					<h1>TODO:</h1>
+					<ul>
+						<li>Vad är AngularJS?</li>
+						<li>Varför ska man välja AngularJS framför allt annat?</li>
+						<li>Hur skriver man AngularJS?</li>
+						<li>Länkar etc.</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h1>Vad är Angular JS?</h1>
+						<p class="description"></p>
+					</section>
+					<section>
+						<h1>Model - View - Controller</h1>
+						<!--
+							Schematic image of how they communicate with each other
+
+						-->
+					</section>
+					<section>
+						<h1>Komponenter</h1>
+						<ul>
+							<li>View</li>
+							<li>Controller</li>
+							<li>Directive</li>
+							<li>Service/Factory</li>
+							<li>Configs</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Varför ska man välja Angular?</h1>
+						<ul>
+							<li>Utvecklat och underhålls av Google.</li>
+							<li>Stort community. Alla har haft alla problem.</li>
+							<li>Framtidssäkert.</li>
+						</ul>
+					</section>
+					<section>
+						<img src="./img/future-safe.png">
+					</section>
+					<section>
+						<h2>Fördelar med Angular:</h2>
+						<ul>
+							<li>Two-way data binding</li>
+							<li>All utveckling sker i HTML</li>
+							<li>Dependency Injection</li>
+							<li>Utöka HTML med directives</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Nackdelar med Angular:</h2>
+						<ul>
+							<li>Kan ganska lätt bli "tungt" för browsern, (många $digest loopar som körs och uppdateringar av DOMen)</li>
+							<li>Lite knepigt med SEO</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Angular-coding</h1>
+						<p>{{ }}</p>
+					</section>
+					<section>
+						<h3>Sample app</h3>
+						<pre><code class="html" contenteditable>
+&lt;!doctype&gt;
+&lt;html ng-app=&quot;app&quot;&gt;
+
+  &lt;head&gt;&lt;/head&gt;
+
+  &lt;body ng-controller=&quot;AppCtrl&quot;&gt;
+
+    <!-- our html template will be here -->
+
+    &lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+						</code></pre>
+					</section>
+					<section>
+						<h3>Controller</h3>
+						<pre><code class="javascript">
+angular
+  .module('app')
+  .controller('AppCtrl', function() {
+    // lalala
+  });
+							</code></pre>
+					</section>
+					<section>
+						<h3>Directive</h3>
+						<pre><code class="javascript">
+angular
+  .module('app')
+  .directive('yalla', function() {
+    return {
+      restrict: 'A',
+      template: '<div></div>',
+      link: function(scope, elem, attrs) {
+        // Do something here!
+      }
+    }
+  });
+						</code></pre>
+					</section>
+					<section>
+						<h3>Factory</h3>
+						<pre><code class="javascript">
+angular
+  .module('app')
+  .factory('DataHandler', function() {
+    return {
+      getData: getData
+    }
+
+    function getData() {
+      // lalallalala
+    }
+  });
+						</code></pre>
+					</section>
+					<section>
+						<h3>Performance problems</h3>
+						<ul>
+							<li><strong>Problem:</strong> Too many watchers</li>
+							<li><strong>Solution:</strong> One time data bindings</li>
+						</ul>
+
+						<ul>
+							<li><strong>Problem:</strong> Too much logic in html. in the {{}}-expressions</li>
+							<li><strong>Solution:</strong> Use controller-functions for calculations. Or even better. Factories!</li>
+						</ul>
+					</section>
+					<section>
+
+					</section>
+				</section>
+
+				<section>
+					<h1>Länkar etc.</h1>
+					<ul>
+						<li>Git repo med dessa slides</li>
+						<li>Git repo med startkit (angular, gulp, localhost-server)</li>
+					</ul>
+				</section>
 			</div>
 
 		</div>
