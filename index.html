@@ -48,69 +48,69 @@
 					<h1>TODO:</h1>
 					<ul>
 						<li>Vad är AngularJS?</li>
-						<li>Varför ska man välja AngularJS framför allt annat?</li>
-						<li>Hur skriver man AngularJS?</li>
-						<li>Länkar etc.</li>
+						<li>Hur kodar man AngularJS?</li>
+						<li>Varför ska man välja AngularJS?</li>
 					</ul>
 				</section>
 
 				<section>
 					<section>
 						<h1>Vad är Angular JS?</h1>
-						<p class="description"></p>
 					</section>
 					<section>
-						<h1>Model - View - Controller</h1>
-						<!--
-							Schematic image of how they communicate with each other
-
-						-->
+						<h2>Defintion:</h2>
+						<p class="description">Angular JS är ett strukturellt ramverk för dynamiska webbappar, sk. Single-Page-Applications.</p>
+						<h2>Grundstruktur:</h2>
+						<p>HTML-templates.</p>
+						<p>Datahantering och logik i Javascript</p>
+						<p>Utökad funktionalitet i HTML med hjälp av "directives".</p>
+					</section>
+					<section class="definition-page left-align">
+						<table>
+							<tbody>
+								<tr>
+									<td><h2>Template</h2></td>
+									<td>HTML och den markup som används.</td>
+								</tr>
+								<tr>
+									<td><h2>View</h2></td>
+									<td>Vad användaren ser.</td>
+								</tr>
+								<tr>
+									<td><h2>Model</h2></td>
+									<td>Den data som visas för användaren i vyn och den som användaren interagerar med.</td>
+								</tr>
+								<tr>
+									<td><h2>Controller</h2></td>
+									<td>Logiken bakom vyn.</td>
+								</tr>
+								<tr>
+									<td><h2>Directive</h2></td>
+									<td>Utökad funktionalitet av HTML med anpassade attribut och element.</td>
+								</tr>
+								<tr>
+									<td><h2>Services</h2></td>
+									<td>Återanvändningsbar logik oberoende av vy.</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 					<section>
-						<h1>Komponenter</h1>
-						<ul>
-							<li>View</li>
-							<li>Controller</li>
-							<li>Directive</li>
-							<li>Service/Factory</li>
-							<li>Configs</li>
-						</ul>
+						<h2>Så som många verktyg fungerar:</h2>
+						<p style="text-align: center; margin-top: 60px;">One-Way Data Binding</p>
+						<img class="data-bindings" src="./img/one-way.png" alt="">
+					</section>
+					<section>
+						<h2>Så som Angular fungerar:</h2>
+						<p style="text-align: center; margin-top: 60px;">Two-Way Data Binding</p>
+						<img class="data-bindings" src="./img/two-way.png" alt="">
 					</section>
 				</section>
-				<section>
-					<section>
-						<h1>Varför ska man välja Angular?</h1>
-						<ul>
-							<li>Utvecklat och underhålls av Google.</li>
-							<li>Stort community. Alla har haft alla problem.</li>
-							<li>Framtidssäkert.</li>
-						</ul>
-					</section>
-					<section>
-						<img src="./img/future-safe.png">
-					</section>
-					<section>
-						<h2>Fördelar med Angular:</h2>
-						<ul>
-							<li>Two-way data binding</li>
-							<li>All utveckling sker i HTML</li>
-							<li>Dependency Injection</li>
-							<li>Utöka HTML med directives</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Nackdelar med Angular:</h2>
-						<ul>
-							<li>Kan ganska lätt bli "tungt" för browsern, (många $digest loopar som körs och uppdateringar av DOMen)</li>
-							<li>Lite knepigt med SEO</li>
-						</ul>
-					</section>
-				</section>
 
 				<section>
 					<section>
-						<h1>Angular-coding</h1>
-						<p>{{ }}</p>
+						<h1>Hur kodar man Angular?</h1>
+						<p style="text-align: center">{{ }}</p>
 					</section>
 					<section>
 						<h3>Sample app</h3>
@@ -187,6 +187,36 @@ angular
 					</section>
 					<section>
 
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Varför ska man välja Angular?</h1>
+						<ul>
+							<li>Utvecklat och underhålls av Google.</li>
+							<li>Stort community. Alla har haft alla problem.</li>
+							<li>Framtidssäkert.</li>
+						</ul>
+					</section>
+					<section>
+						<img src="./img/future-safe.png">
+					</section>
+					<section>
+						<h2>Fördelar med Angular:</h2>
+						<ul>
+							<li>Two-Way Data Binding</li>
+							<li>All template-utveckling sker i ren HTML</li>
+							<li>Dependency Injection</li>
+							<li>Utökad HTML med directives</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Nackdelar med Angular:</h2>
+						<ul>
+							<li>Kan ganska lätt bli "tungt" för browsern, (många $digest loopar som körs och uppdateringar av DOMen)</li>
+							<li>Lite knepigt med SEO</li>
+						</ul>
 					</section>
 				</section>
 

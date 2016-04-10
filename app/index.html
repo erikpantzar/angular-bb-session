@@ -1,0 +1,26 @@
+<!doctype>
+
+<html ng-app="listApp">
+  <head>
+    <title>Inköpslista</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body ng-controller="AppCtrl as main">
+    <h1>Inköpslista</h1>
+    <ul>
+      <li ng-repeat="item in main.items">
+        <span>{{ item.name }}</span>
+        <span>{{ item.quantity }}</span>
+      </li>
+    </ul>
+
+    <input type="text">
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+  </body>
+
+</html>

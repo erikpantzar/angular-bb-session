@@ -9,6 +9,25 @@
   border: none;
   background: none; }
 
+#angular-bb-session .definition-page table td:first-child {
+  text-align: center; }
+
+#angular-bb-session .definition-page table td {
+  vertical-align: middle;
+  padding-bottom: 30px;
+  border: none; }
+
+#angular-bb-session .definition-page h2 {
+  display: inline-block;
+  margin-bottom: 0; }
+
+#angular-bb-session p,
+#angular-bb-session .left-align {
+  text-align: left; }
+
+#angular-bb-session img.data-bindings {
+  width: 65%; }
+
 /**
  * Solarized colors by Ethan Schoonover
  */

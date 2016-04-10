@@ -7,4 +7,28 @@
 		background: none;
 	}
 
+  .definition-page table td:first-child {
+    text-align: center;
+  }
+
+  .definition-page table td {
+    vertical-align: middle;
+    padding-bottom: 30px;
+    border: none;
+  }
+
+  .definition-page h2 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  p,
+  .left-align {
+    text-align: left;
+  }
+
+  img.data-bindings {
+    width: 65%;
+  }
+
 }
