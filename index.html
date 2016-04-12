@@ -132,7 +132,7 @@
 &lt;/div&gt;
 						</code></pre>
 					</section>
-					<section>
+					<!--section>
 						<h3>Sample app</h3>
 						<pre><code class="html" contenteditable>
 &lt;!doctype&gt;
@@ -141,8 +141,6 @@
   &lt;head&gt;&lt;/head&gt;
 
   &lt;body ng-controller=&quot;AppCtrl&quot;&gt;
-
-    <!-- our html template will be here -->
 
     &lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
@@ -192,34 +190,27 @@ angular
     }
   });
 						</code></pre>
-					</section>
-					<section>
-						<h3>Performance problems</h3>
-						<ul>
-							<li><strong>Problem:</strong> Too many watchers</li>
-							<li><strong>Solution:</strong> One time data bindings</li>
-						</ul>
-
-						<ul>
-							<li><strong>Problem:</strong> Too much logic in html. in the {{}}-expressions</li>
-							<li><strong>Solution:</strong> Use controller-functions for calculations. Or even better. Factories!</li>
-						</ul>
-					</section>
-					<section>
-
-					</section>
+					</section-->
 				</section>
 
 				<section>
 					<section>
-						<h1>Varför ska man välja Angular?</h1>
-						<ul>
-							<li>Utvecklat och underhålls av Google.</li>
-							<li>Stort community. Alla har haft alla problem.</li>
-							<li>Framtidssäkert.</li>
-						</ul>
+						<h1>Lite om performance</h1>
 					</section>
 					<section>
+						<h2>Vanliga performance problem</h2>
+						<div class="left-align">
+							<ul>
+								<li><strong>Problem:</strong> För många "watchers"</li>
+								<li><strong>Solution:</strong> One time data bindings</li>
+							</ul>
+							<ul style="margin-top: 15px;">
+								<li><strong>Problem:</strong> För mycket logik i HTML, i {{}}</li>
+								<li><strong>Solution:</strong> Använd kontrolelrfunktioner för beräkningar. Eller ännu bättre, services!</li>
+							</ul>
+						</div>
+					</section>
+					<!--section>
 						<img src="./img/future-safe.png">
 					</section>
 					<section>
@@ -237,7 +228,7 @@ angular
 							<li>Kan ganska lätt bli "tungt" för browsern, (många $digest loopar som körs och uppdateringar av DOMen)</li>
 							<li>Lite knepigt med SEO</li>
 						</ul>
-					</section>
+					</section-->
 				</section>
 
 				<section>
