@@ -116,6 +116,23 @@
 						<h1>Hur kodar man Angular?</h1>
 					</section>
 					<section>
+						<h2>Ett första exempel: Data binding</h2>
+						<pre><code class="html">
+&lt;div ng-app ng-init=&quot;qty=1;cost=2&quot;&gt;
+  &lt;b&gt;Inköpslista:&lt;/b&gt;
+  &lt;div&gt;
+    Antal: &lt;input type=&quot;number&quot; min=&quot;0&quot; ng-model=&quot;qty&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    Kostnad: &lt;input type=&quot;number&quot; min=&quot;0&quot; ng-model=&quot;cost&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;b&gt;Totalt:&lt;/b&gt; {{qty * cost | currency}}
+  &lt;/div&gt;
+&lt;/div&gt;
+						</code></pre>
+					</section>
+					<section>
 						<h3>Sample app</h3>
 						<pre><code class="html" contenteditable>
 &lt;!doctype&gt;
