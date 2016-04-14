@@ -1,4 +1,5 @@
-<!DOCTYPE html><html ng-app="app">
+<!DOCTYPE html>
+<html ng-app="app">
 <head>
 	<meta charset="UTF-8">
 
@@ -34,29 +35,6 @@
 
 </section>
 
-
-<section class="block">
-
-	<h2>Custom Directive #2</h2>
-	<p>
-		A directive that toggles whatever class given.
-	</p>
-
-
-	<article class="expandable" class-toggler toggle="expanded highlight">
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sunt perferendis fugiat pariatur veritatis, eligendi quae minima voluptatem dolore architecto dolor necessitatibus repellendus ullam, sequi ex facilis soluta, amet magni.
-		</p>
-
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sunt perferendis fugiat pariatur veritatis, eligendi quae minima voluptatem dolore architecto dolor necessitatibus repellendus ullam, sequi ex facilis soluta, amet magni.
-		</p>
-	</article>
-
-
-</section>
-
-
 <script src="../angular.min.js"></script>
 <script type="text/javascript">
 
@@ -71,7 +49,6 @@
 			template: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sequi dolores distinctio ex ab eum enim quis, non ipsam atque perspiciatis laboriosam at commodi similique voluptate doloribus deleniti animi esse!</p>"
 		};
 
-
 		function link (scope, element, attributes) {
 			element.on('click', function () {
 				element.toggleClass('expanded');
@@ -79,29 +56,52 @@
 		}
 	}
 
+</script>
+
+
+<section class="block">
+
+	<h2>Custom Directive #2</h2>
+	<p>
+		A directive that toggles whatever class given.
+	</p>
+
+
+	<article class="expandable" class-toggler="expanded highlight">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sunt perferendis fugiat pariatur veritatis, eligendi quae minima voluptatem dolore architecto dolor necessitatibus repellendus ullam, sequi ex facilis soluta, amet magni.
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sunt perferendis fugiat pariatur veritatis, eligendi quae minima voluptatem dolore architecto dolor necessitatibus repellendus ullam, sequi ex facilis soluta, amet magni.
+		</p>
+	</article>
+
+</section>
+
+<script>
 
 	angular.module('app')
 		.directive('classToggler', classToggler)
 	;
-
 
 	function classToggler () {
 		return {
 			restrict: "A",
 			link: link,
 			scope: {
-				toggle: "@"
+				classToggler: "@"
 			}
 		};
 
 		function link (scope, el, attrs) {
-			console.log(scope);
 			el.on('click', function () {
-				el.toggleClass(scope.toggle);
+				el.toggleClass(scope.classToggler);
 			});
 		}
 	}
 
 </script>
+
 </body>
 </html>
