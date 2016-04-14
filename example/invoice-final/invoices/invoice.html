@@ -1,0 +1,47 @@
+
+<h1><span>({{item.id}})</span> {{item.client }}</h1>
+
+
+<section>
+	<label>Hourly rate
+		<input type="text" ng-model="item.rate">
+	</label>
+</section>
+
+<section >
+
+	<h3>Tasks:</h3>
+	<ul class="invoice__task-list">
+		<li ng-repeat="task in item.tasks" class="invoice__task">
+			<label>
+				<input type="text" name="name" placeholder="What did you do?"
+					ng-model="task.task">
+			</label>
+
+			<label>
+				<input type="number" name="name" placeholder="How long? (H)"
+					ng-model="task.time">
+			</label>
+
+			<button type="button" ng-click="invoiceVm.remove($index, item.tasks)">X</button>
+		</li>
+
+		<li>
+			<form ng-submit="invoiceVm.add(invoiceVm.newTask, item)">
+				<label>
+					<input type="text" name="name" placeholder="What did you do?"
+						ng-model="invoiceVm.newTask.task">
+				</label>
+
+				<label>
+					<input type="number" name="name" placeholder="How long? (H)"
+						ng-model="invoiceVm.newTask.time">
+				</label>
+
+				<button type="submit">+ Task</button>
+			</form>
+		</li>
+	</ul>
+
+	
+</section>

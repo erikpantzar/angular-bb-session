@@ -1,0 +1,176 @@
+body {
+	font-size: 0.8em;
+}
+
+h1, h2 {
+	margin: 0 0 1em;
+	line-height: 2em;
+}
+
+h3 {
+	line-height: 1.5em;
+}
+
+h4 {
+	margin: 0 0 0.5em;
+}
+
+.invoice-list h3 {
+	margin-top: 2em;
+	border-bottom: 2px solid #222;
+}
+
+
+.invoice-listing {
+	float: left;
+	width: 50vw;
+	display: block;
+	min-height: 100vh;
+	padding: 1% 2%;
+	box-sizing: border-box;
+	background: #efefff;
+	color: #222;
+	list-style: none;
+}
+
+.invoice-list {
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0 0 2.5em;
+
+	width: 100%; display: block; float: left;
+
+	border-bottom: 2px dashed #222;
+
+}
+
+.invoice-listing > li  {
+	margin: 0; padding: 0;
+}
+
+.invoice {	display: block;	clear: both;	float: left;	width: 100%;}
+
+label {
+	text-transform: capitalize;
+}
+
+
+input[type=text], input[type=number] {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid;
+	padding: 0 5px;
+	box-sizing: border-box;;
+	box-shadow: 0;
+
+	line-height: 2em;
+	font-size: 0.875em;
+}
+
+button {
+	background: transparent;
+	color: black;
+	border: 2px solid;
+	padding: 0 20px;
+	line-height: 2em;
+}
+
+.invoice {
+	position: relative;
+}
+
+.invoice button {
+	position: absolute;
+	top: 5em;
+	right: 0;
+
+	line-height: 3.5em;
+}
+
+button:hover {
+	background: black;
+	border-color: black;
+	color: white;
+}
+
+
+.button--close {
+	position: fixed;
+	top: 5%;
+	right: 4%;
+}
+
+
+.invoice__task-list { margin: 0 0 1em; padding: 0; }
+
+.invoice__task-list li {
+	min-height: 1em;
+	margin: 0 0 1em;
+	list-style: none;
+}
+
+
+.invoice-single {
+
+	background: #eee;
+
+	padding: 1% 2%;
+	box-sizing: border-box;
+
+	position: fixed;
+	right: 0;
+	top: 0;
+	float: right;
+	width: 50vw;
+	display: block;
+	min-height: 100vh;
+
+	animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+
+.invoice-item__list {
+	padding: 0;
+	display: block; width: 100%; float: left;
+	list-style: none;
+}
+
+.invoice-item__list li {
+	background: #eff;
+	display: block; width: 100%; float: left;
+	padding: 6px 5px;
+}
+
+.invoice-item__list li:nth-child(odd) {
+	background: #bbf;
+}
+
+.task__name,
+.task__time {
+	display: block;
+	float: left;
+	width: 200px;
+	margin: 0;
+}
+
+.task__name { clear: left; }
+.task__time { clear: right;}
+
+
+
+.right {
+	float: right;
+}
+
+.inline-block {
+	display: inline-block;
+}

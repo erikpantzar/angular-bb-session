@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="invoiceApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Invoce final app example</title>
+		<link rel="stylesheet" href="../normalize.css">
+		<link rel="stylesheet" href="../invoice.css">
+	</head>
+	<body>
+
+		<main class="main"
+			ng-controller="invoiceListController as listVm">
+
+			<div class="invoice-listing">
+
+				<h2>Invoices</h2>
+
+				<label>Sort by <input type="text" ng-model="filterList" placeholder="ANythIng"></label>
+
+				<ul class="invoice-list">
+					<li ng-repeat="invoice in listVm.invoices | filter:filterList">
+						<article class="invoice">
+							<h3>
+								<span>({{::invoice.id }})</span>	{{::invoice.client }}
+								<span class="right inline-block">Total <span ng-bind="invoice.total | currency">0</span></span>
+							</h3>
+
+							<p>Rate {{ invoice.rate | currency }} )</p>
+
+							<h4>Tasks:</h4>
+
+							<ul class="invoice-item__list">
+								<li ng-repeat="task in invoice.tasks">
+									<div class="task__name">	{{ task.task }}</div>
+									<div class="task__time"><span ng-bind="task.time">XX</span> hours</div>
+								</li>
+							</ul>
+
+							<button class="right inline-block"
+								ng-click="listVm.setInvoiceActive($index)">
+								Edit invoice
+							</button>
+
+
+
+						</article>
+					</li>
+				</ul>
+
+				<h2>
+					Invoices Total
+					<span class="inline-block right">
+						{{ listVm.invoicesTotal( listVm.invoices) | currency }}
+					</span>
+				</h2>
+			</div>
+
+			<!-- edit view directive -->
+			<invoice class="invoice-single"
+				ng-show="listVm.invoiceActive" item="listVm.invoiceActive"/>
+
+		</main>
+
+
+		<script type="text/javascript" src="../angular.min.js"></script>
+
+		<!-- Ze application  -->
+		<script src="index.js"></script>  <!-- Main / Index -->
+		<script src="invoices/invoiceList.controller.js"></script> <!-- Controllers  -->
+		<script src="invoices/invoice.controller.js"></script> <!-- Directive  -->
+		<script src="invoices/invoice.directive.js"></script> <!-- Directive  -->
+		<script src="invoices/invoices.service.js"></script> <!-- Service -->
+
+		<!-- Directives -->
+
+	</body>
+</html>
