@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-init="invoices=[{name: 'Kronan', time: 0}, {name: 'XXL', time: 300}, {name: 'Cramo', time: 30}]">
+	<input type="text" ng-model="name">
+	<p>{{ name }}</p>
+
+	<ul>
+		<li ng-repeat="invoice in invoices">
+
+		</li>
+	</ul>
+	<script src="../angular.min.js"></script>
+</body>
+</html>
