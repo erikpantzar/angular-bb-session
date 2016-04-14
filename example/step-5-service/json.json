@@ -1,0 +1,15 @@
+{
+	"Invoices": [
+		{ "id": 1, "title": "yo",  "rate": 900, "client": "Arla Corp",
+			"tasks": [{"task": "Development", "time": 200},{"task":"Project management", "time": 20 }]
+		},
+		{
+			"id": 2, "title": "yo2", "rate": 1200, "client": "Enterprise.com LTD",
+			"tasks": [{"task": "Development", "time": 40},{"task":"Project management", "time": 10 }]
+		},
+
+		{ "id": 3, "title": "Hola",  "rate": 600, "client": "Indie org",
+			"tasks": [{"task": "asd", "time": 2 }]
+		}
+	]
+}
