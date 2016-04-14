@@ -1,0 +1,107 @@
+<!DOCTYPE html><html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Custom Directive</title>
+	<style>
+
+		text-expander-directive,
+		.expandable { max-height: 200px; width: 300px; font-size: 2em; line-height: 1.5; overflow: hidden; display: block; margin: 1em auto; transition: all 0.3s linear; }
+		text-expander-directive.expanded,
+		.expandable.expanded { max-height: 500px; }
+
+		.highlight {
+			background: yellow;
+		}
+
+		.block {
+			width: 100vw; height: 100vh; display: block; float: left;
+			box-sizing: border-box; padding: 20px 2% ;
+		}
+		body { margin: 0; padding: 0;}
+	</style>
+</head>
+<body>
+
+<section class="block">
+
+	<h1>Custom Directive #1</h1>
+	<p>
+		Click to expand the text
+	</p>
+
+	<text-expander-directive></text-expander-directive>
+
+</section>
+
+
+<section class="block">
+
+	<h2>Custom Directive #2</h2>
+	<p>
+		A directive that toggles whatever class given.
+	</p>
+
+
+	<article class="expandable" class-toggler toggle="expanded highlight">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sunt perferendis fugiat pariatur veritatis, eligendi quae minima voluptatem dolore architecto dolor necessitatibus repellendus ullam, sequi ex facilis soluta, amet magni.
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate sunt perferendis fugiat pariatur veritatis, eligendi quae minima voluptatem dolore architecto dolor necessitatibus repellendus ullam, sequi ex facilis soluta, amet magni.
+		</p>
+	</article>
+
+
+</section>
+
+
+<script src="../angular.min.js"></script>
+<script type="text/javascript">
+
+	angular.module('app', [])
+		.directive('textExpanderDirective', textExpander)
+	;
+
+	function textExpander () {
+		return {
+			restrict: "AE",
+			link: link,
+			template: "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sequi dolores distinctio ex ab eum enim quis, non ipsam atque perspiciatis laboriosam at commodi similique voluptate doloribus deleniti animi esse!</p>"
+		};
+
+
+		function link (scope, element, attributes) {
+			element.on('click', function () {
+				element.toggleClass('expanded');
+			});
+		}
+	}
+
+
+	angular.module('app')
+		.directive('classToggler', classToggler)
+	;
+
+
+	function classToggler () {
+		return {
+			restrict: "A",
+			link: link,
+			scope: {
+				toggle: "@"
+			}
+		};
+
+		function link (scope, el, attrs) {
+			console.log(scope);
+			el.on('click', function () {
+				el.toggleClass(scope.toggle);
+			});
+		}
+	}
+
+</script>
+</body>
+</html>

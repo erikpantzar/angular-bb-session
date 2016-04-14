@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Service</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+	angular.module('app', [])
+		.service('service', service)
+	;
+
+	service.$injector = ['$http'];
+
+	function service () {
+		return {
+			get: get
+		};
+
+		function get() {
+			return $http.get('./json.json');
+		}
+	}
+
+</script>
+
+</body>
+</html>
