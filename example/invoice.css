@@ -38,8 +38,6 @@ h4 {
 	padding: 0;
 
 	width: 100%; display: block; float: left;
-
-
 }
 
 .invoice-listing > li  {
@@ -51,7 +49,6 @@ h4 {
 label {
 	text-transform: capitalize;
 }
-
 
 input[type=text], input[type=number] {
 	background: transparent;
@@ -87,11 +84,11 @@ button {
 	position: absolute;
 	top: 4em;
 	right: 3%;
-
 	line-height: 3.5em;
 }
 
-button:hover {
+button:hover,
+button.active {
 	background: black;
 	border-color: black;
 	color: white;

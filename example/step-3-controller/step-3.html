@@ -1,44 +1,66 @@
-
 <!DOCTYPE html>
-<html ng-app="invoiceApp">
+<html ng-app>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="../normalize.css">
-  <link rel="stylesheet" href="../invoice.css">
+	<meta charset="UTF-8">
+	<title>Directice 2 way data binding</title>
+	<link rel="stylesheet" href="../normalize.css">
+	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <div ng-controller="InvoiceController">
-    <input type="text" ng-model="name">
-    <p>Filter by: {{ name }}</p>
 
-    <ul>
-      <li ng-repeat="invoice in invoices | filter:name">
-        <h2>{{ invoice.name | uppercase }}</h2>
-        <p>Total time: {{ invoice.time }}</p>
-      </li>
-    </ul>
-  </div>
 
-  <script src="../angular.min.js"></script>
+	<section class="block">
+		<h1>Controller</h1>
+		<p>
+			Here we separate logic from view to the controller.
+		</p>
 
-  <script>
-    angular.module('invoiceApp', [])
-      .controller('InvoiceController', function($scope) {
-          $scope.invoices = [
-            {name: 'krOnan', time: 1000},
-            {name: 'XXL', time: 300},
-            {name: 'Cramo', time: 900},
-            {name: 'Sibylla', time: 40}
-          ];
+		<div class="block__center" ng-controller="tasksController as tasksVm">
 
-          $scope.calcTotal = function() {
+			<form class="outline" ng-submit="tasksVm.add(invoice.task)">
+				<input type="text" ng-model="invoice.task.name">
+				<input type="number" ng-model="invoice.task.time">
+				<p>{{ invoice.task }}</p>
 
-          }
+				<button type="submit" name="button">Add</button>
+			</form>
 
-        });
+		</div>
 
-  </script>
+		<h2>Tasks:</h2>
+
+		<ul>
+			<!-- maybe add index to show progress? -->
+			<li ng-repeat="task in Invoices.tasks">
+				{{ task }}
+			</li>
+		</ul>
+
+
+	</section>
+
+<script src="../angular.min.js"></script>
+<script type="text/javascript">
+	angular.module('app', [])
+		.controller('tasksController', tasks)
+		;
+
+	function tasks () {
+		var vm = this;
+		vm.add = add;
+
+		// init data
+		var Invoices = { tasks: [
+			{ name: 'Development', time: 20 },
+			{ name: 'Management', time: 12 },
+			{ name: 'Design', time: 35 }]
+		};
+
+		vm.Invoices = Invoices;
+
+
+	}
+</script>
 
 </body>
 </html>

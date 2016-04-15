@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../normailze.css">
 	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
-<body ng-init="Invoices = []">
+<body>
 
 
 	<section class="block">
@@ -18,18 +18,14 @@
 
 		<div class="block__center">
 
-			<form class="outline" ng-submit="Invoices.push(invoice.task); invoice.task = null">
-				<input type="text" ng-model="invoice.task.name">
-				<input type="text" ng-model="invoice.task.time">
-				<p>{{ invoice.task }}</p>
+			<form class="outline">
 
+				<input type="text" placeholder="Input">
 				<button type="submit" name="button">Add</button>
+
 			</form>
 
 		</div>
-
-
-		{{ Invoices }}
 
 	</section>
 
