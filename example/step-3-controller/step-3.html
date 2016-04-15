@@ -2,12 +2,11 @@
 <html ng-app="app">
 <head>
 	<meta charset="UTF-8">
-	<title>Directice 2 way data binding</title>
+	<title>Directive 2 way data binding</title>
 	<link rel="stylesheet" href="../normalize.css">
 	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-
 	<!-- Deninition of controller up here -->
 	<section class="block" ng-controller="tasksController as tasksVm">
 		<h1>Controller</h1>
@@ -16,7 +15,6 @@
 		</p>
 
 		<div class="block__center">
-
 			<form class="outline" ng-submit="tasksVm.add(tasksVm.task)">
 				<input type="text" ng-model="tasksVm.task.name">
 				<input type="number" ng-model="tasksVm.task.time">
@@ -24,7 +22,6 @@
 
 				<button type="submit" name="button">Add</button>
 			</form>
-
 		</div>
 
 		<h2>Tasks:</h2>
@@ -55,13 +52,11 @@
 
 		vm.Invoices = Invoices;
 
-		// methods 
+		// methods
 		function add (task) {
 			vm.Invoices.tasks.push( task );
-			vm.task = {}; // reset 
+			vm.task = {}; // reset
 		}
-
-
 	}
 </script>
 

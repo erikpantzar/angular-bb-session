@@ -3,21 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Directice 2 way data binding</title>
-	<link rel="stylesheet" href="../normailze.css">
+	<link rel="stylesheet" href="../normalize.css">
 	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body ng-init="Invoices = []">
-
-
 	<section class="block">
 		<h1>Directive and Databinding</h1>
 		<p>
 			In this example we will show how to write simple things with just ng-directives (native angular directives).
 		</p>
-
-
 		<div class="block__center">
-
 			<form class="outline" ng-submit="Invoices.push(invoice.task); invoice.task = null">
 				<input type="text" ng-model="invoice.task.name">
 				<input type="text" ng-model="invoice.task.time">
@@ -25,15 +20,9 @@
 
 				<button type="submit" name="button">Add</button>
 			</form>
-
 		</div>
-
-
 		{{ Invoices }}
-
 	</section>
-
-
 
 <script src="../angular.min.js"></script>
 

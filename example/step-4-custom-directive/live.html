@@ -14,9 +14,7 @@
 		<p>
 			Here we separate logic from view to the controller.
 		</p>
-
 		<div class="block__center">
-
 			<form class="outline" ng-submit="tasksVm.add(tasksVm.task)">
 				<input type="text" ng-model="tasksVm.task.name">
 				<input type="number" ng-model="tasksVm.task.time">
@@ -55,13 +53,11 @@
 
 		vm.Invoices = Invoices;
 
-		// methods 
+		// methods
 		function add (task) {
 			vm.Invoices.tasks.push( task );
-			vm.task = {}; // reset 
+			vm.task = {}; // reset
 		}
-
-
 	}
 </script>
 
