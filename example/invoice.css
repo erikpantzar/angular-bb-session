@@ -1,5 +1,6 @@
 body {
 	font-size: 0.8em;
+	background: #dedede;
 }
 
 h1, h2 {
@@ -16,10 +17,9 @@ h4 {
 }
 
 .invoice-list h3 {
-	margin-top: 2em;
+	margin-top: 10px;
 	border-bottom: 2px solid #222;
 }
-
 
 .invoice-listing {
 	float: left;
@@ -28,19 +28,17 @@ h4 {
 	min-height: 100vh;
 	padding: 1% 2%;
 	box-sizing: border-box;
-	background: #efefff;
 	color: #222;
 	list-style: none;
 }
 
 .invoice-list {
 	list-style: none;
-	margin: 0 0 1em;
-	padding: 0 0 2.5em;
+	margin: 1em 0;
+	padding: 0;
 
 	width: 100%; display: block; float: left;
 
-	border-bottom: 2px dashed #222;
 
 }
 
@@ -77,12 +75,18 @@ button {
 
 .invoice {
 	position: relative;
+	background: #fff;
+	padding: 2% 4%;
+	margin: 0 0 1em;
+	border-bottom: 2px solid #ccc;
+
+	box-sizing: border-box;;
 }
 
 .invoice button {
 	position: absolute;
-	top: 5em;
-	right: 0;
+	top: 4em;
+	right: 3%;
 
 	line-height: 3.5em;
 }
@@ -111,19 +115,21 @@ button:hover {
 
 
 .invoice-single {
+	background: #fff;
 
-	background: #eee;
+	margin: 1% 2%;
+	padding: 2%;
+	box-sizing: border-box;
 
-	padding: 1% 2%;
 	box-sizing: border-box;
 
 	position: fixed;
 	right: 0;
 	top: 0;
 	float: right;
-	width: 50vw;
+	width: 48vw;
 	display: block;
-	min-height: 100vh;
+	min-height: 96vh;
 
 	animation: slideIn 0.3s ease-in-out;
 }
@@ -145,20 +151,17 @@ button:hover {
 }
 
 .invoice-item__list li {
-	background: #eff;
 	display: block; width: 100%; float: left;
 	padding: 6px 5px;
-}
-
-.invoice-item__list li:nth-child(odd) {
-	background: #bbf;
 }
 
 .task__name,
 .task__time {
 	display: block;
 	float: left;
-	width: 200px;
+	width: 40%;
+	min-width: 120px;
+
 	margin: 0;
 }
 
