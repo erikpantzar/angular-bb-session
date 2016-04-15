@@ -49,190 +49,68 @@
 					<ul>
 						<li>Vad är AngularJS? ...och varför är det så bra?</li>
 						<li>Hur kodar man AngularJS?</li>
-						<li>Lite om performance</li>
 					</ul>
 				</section>
 
 				<section>
-					<section>
-						<h1>Vad är Angular JS?</h1>
-					</section>
-					<section>
-						<h2>Defintion:</h2>
-						<p class="description">
-							“AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures. The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views. As a result, AngularJS de-emphasizes explicit DOM manipulation with the goal of improving testability and performance."
-						</p>
-					</section>
-					<section class="definition-page left-align">
-						<table>
-							<tbody>
-								<tr>
-									<td><h2>Template</h2></td>
-									<td>HTML och den markup som används.</td>
-								</tr>
-								<tr>
-									<td><h2>View</h2></td>
-									<td>Vad användaren ser.</td>
-								</tr>
-								<tr>
-									<td><h2>Model</h2></td>
-									<td>Den data som visas för användaren i vyn och den som användaren interagerar med.</td>
-								</tr>
-								<tr>
-									<td><h2>Controller</h2></td>
-									<td>Logiken bakom vyn.</td>
-								</tr>
-								<tr>
-									<td><h2>Directive</h2></td>
-									<td>Utökad funktionalitet av HTML med anpassade attribut och element.</td>
-								</tr>
-								<tr>
-									<td><h2>Services</h2></td>
-									<td>Återanvändningsbar logik oberoende av vy.</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<h2>Grundstruktur:</h2>
-						<p>HTML-templates.</p>
-						<p>Datahantering och logik i Javascript</p>
-						<p>Utökad funktionalitet i HTML med hjälp av "directives".</p>
-					</section>
-					<section>
-						<h2>Så som många verktyg fungerar:</h2>
-						<p style="text-align: center; margin-top: 60px;">One-Way Data Binding</p>
-						<img class="data-bindings" src="./img/one-way.png" alt="">
-					</section>
-					<section>
-						<h2>Så som Angular fungerar:</h2>
-						<p style="text-align: center; margin-top: 60px;">Two-Way Data Binding</p>
-						<img class="data-bindings" src="./img/two-way.png" alt="">
-					</section>
+					<h1>Vad är Angular JS?</h1>
+				</section>
+				<section>
+					<h2>Skolboksdefintionen:</h2>
+					<p class="description">
+						“AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures. The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views."
+					</p>
+				</section>
+				<section>
+					<p>AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures.</p>
+					<p class="fragment"><strong>View - </strong>What the user sees.</p>
+					<p class="fragment"><strong>Model - </strong>The data shown to the user in the view and with which the user interacts</p>
+					<p class="fragment"><strong>Controller - </strong>Logic behind the view.</p>
+					<!-- <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p> -->
+				</section>
+				<section>
+					<p> The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views.</p>
+					<p class="fragment"><strong>Template - </strong>HTML with additional markup</p>
+					<p class="fragment"><strong>Directive - </strong>extend HTML with custom attributes and elements</p>
+					<p class="fragment"><strong>Services - </strong>Resuable logic independent of views</p>
+					<p class="fragment"><strong>Two-way Data Binding... </strong></p>
+				</section>
+				<section>
+					<h2>Så som många verktyg fungerar:</h2>
+					<p style="text-align: center; margin-top: 60px;">One-Way Data Binding</p>
+					<img class="data-bindings" src="./img/one-way.png" alt="">
+				</section>
+				<section>
+					<h2>Så som Angular fungerar:</h2>
+					<p style="text-align: center; margin-top: 60px;">Two-Way Data Binding</p>
+					<img class="data-bindings" src="./img/two-way.png" alt="">
+				</section>
+				<section>
+					<h2>Directives, Data binding</h2>
 				</section>
 
 				<section>
-					<section>
-						<h1>Hur kodar man Angular?</h1>
-					</section>
-					<section>
-						<h2>Ett första exempel: Data binding</h2>
-						<pre><code class="html">
-&lt;div ng-app ng-init=&quot;qty=1;cost=2&quot;&gt;
-  &lt;b&gt;Inköpslista:&lt;/b&gt;
-  &lt;div&gt;
-    Antal: &lt;input type=&quot;number&quot; min=&quot;0&quot; ng-model=&quot;qty&quot;&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    Kostnad: &lt;input type=&quot;number&quot; min=&quot;0&quot; ng-model=&quot;cost&quot;&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;b&gt;Totalt:&lt;/b&gt; {{qty * cost | currency}}
-  &lt;/div&gt;
-&lt;/div&gt;
-						</code></pre>
-					</section>
-					<!--section>
-						<h3>Sample app</h3>
-						<pre><code class="html" contenteditable>
-&lt;!doctype&gt;
-&lt;html ng-app=&quot;app&quot;&gt;
-
-  &lt;head&gt;&lt;/head&gt;
-
-  &lt;body ng-controller=&quot;AppCtrl&quot;&gt;
-
-    &lt;script src=&quot;angular.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-
-&lt;/html&gt;
-						</code></pre>
-					</section>
-					<section>
-						<h3>Controller</h3>
-						<pre><code class="javascript">
-angular
-  .module('app')
-  .controller('AppCtrl', function() {
-    // lalala
-  });
-							</code></pre>
-					</section>
-					<section>
-						<h3>Directive</h3>
-						<pre><code class="javascript">
-angular
-  .module('app')
-  .directive('yalla', function() {
-    return {
-      restrict: 'A',
-      template: '<div></div>',
-      link: function(scope, elem, attrs) {
-        // Do something here!
-      }
-    }
-  });
-						</code></pre>
-					</section>
-					<section>
-						<h3>Factory</h3>
-						<pre><code class="javascript">
-angular
-  .module('app')
-  .factory('DataHandler', function() {
-    return {
-      getData: getData
-    }
-
-    function getData() {
-      // lalallalala
-    }
-  });
-						</code></pre>
-					</section-->
+					<h2>NG-repeat, Filters</h2>
 				</section>
 
 				<section>
-					<section>
-						<h1>Lite om performance</h1>
-					</section>
-					<section>
-						<h2>Vanliga performance problem</h2>
-						<div class="left-align">
-							<ul>
-								<li><strong>Problem:</strong> För många "watchers"</li>
-								<li><strong>Solution:</strong> One time data bindings</li>
-							</ul>
-							<ul style="margin-top: 15px;">
-								<li><strong>Problem:</strong> För mycket logik i HTML, i {{}}</li>
-								<li><strong>Solution:</strong> Använd kontrolelrfunktioner för beräkningar. Eller ännu bättre, services!</li>
-							</ul>
-						</div>
-					</section>
-					<!--section>
-						<img src="./img/future-safe.png">
-					</section>
-					<section>
-						<h2>Fördelar med Angular:</h2>
-						<ul>
-							<li>Two-Way Data Binding</li>
-							<li>All template-utveckling sker i ren HTML</li>
-							<li>Dependency Injection</li>
-							<li>Utökad HTML med directives</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Nackdelar med Angular:</h2>
-						<ul>
-							<li>Kan ganska lätt bli "tungt" för browsern, (många $digest loopar som körs och uppdateringar av DOMen)</li>
-							<li>Lite knepigt med SEO</li>
-						</ul>
-					</section-->
+					<h2>Controllers</h2>
 				</section>
 
 				<section>
-					<h1>Länkar etc.</h1>
+					<h2>Custom Directives</h2>
+				</section>
+
+				<section>
+					<h2>Services, Promise</h2>
+				</section>
+
+				<section>
+					<h2>Routing</h2>
+				</section>
+
+				<section>
+					<h2>Länkar etc.</h2>
 					<ul>
 						<li>Git repo med dessa slides</li>
 						<li>Git repo med startkit (angular, gulp, localhost-server)</li>
