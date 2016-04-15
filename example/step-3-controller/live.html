@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Directice 2 way data binding</title>
+	<link rel="stylesheet" href="../normalize.css">
+	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body ng-init="Invoices = { tasks: [
+			{ name: 'Development', time: 20 },
+			{ name: 'Management', time: 12 },
+			{ name: 'Design', time: 35 }]
+		};">
+
+	<!-- Deninition of controller up here -->
+	<section class="block">
+		<h1>Controller</h1>
+		<p>
+			Here we separate logic from view to the controller.
+		</p>
+
+
+		<div class="block__center">
+
+			<!-- use ViewModel -->
+			<form class="outline" ng-submit="Invoices.tasks.push(invoice.task); invoice.task = null">
+
+				<!-- invoice.task = {} -->
+				<input type="text" ng-model="invoice.task.name">
+				<input type="number" ng-model="invoice.task.time">
+				<p>{{ invoice.task }}</p>
+
+				<button type="submit" name="button">Add</button>
+			</form>
+
+		</div>
+
+		<h2>Tasks:</h2>
+		<ul>
+			<!-- maybe add index to show progress? -->
+			<li ng-repeat="task in Invoices.tasks">
+				{{ task }}
+			</li>
+		</ul>
+
+
+	</section>
+
+<script src="../angular.min.js"></script>
+<script type="text/javascript">
+	// define ng-app module
+	// define controller
+	// attach data
+	// define methods 
+	
+
+</script>
+
+</body>
+</html>
