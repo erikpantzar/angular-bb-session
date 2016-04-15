@@ -3,24 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Directice 2 way data binding</title>
-	<link rel="stylesheet" href="../normailze.css">
+	<link rel="stylesheet" href="../normalize.css">
 	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
-<body ng-init="Invoices = []">
+<body ng-init="Invoices = { tasks: [
+	{ name: 'Development', time: 20 },
+	{ name: 'Management', time: 12 },
+	{ name: 'Design', time: 35 }]}">
 
 
 	<section class="block">
-		<h1>Directive and Databinding</h1>
+		<h1>NG Repeaters</h1>
 		<p>
-			In this example we will show how to write simple things with just ng-directives (native angular directives).
+			We will repeat items from data in a repeater.
 		</p>
 
 
 		<div class="block__center">
 
-			<form class="outline" ng-submit="Invoices.push(invoice.task); invoice.task = null">
+			<form class="outline" ng-submit="Invoices.tasks.push(invoice.task); invoice.task = null">
 				<input type="text" ng-model="invoice.task.name">
-				<input type="text" ng-model="invoice.task.time">
+				<input type="number" ng-model="invoice.task.time">
 				<p>{{ invoice.task }}</p>
 
 				<button type="submit" name="button">Add</button>
@@ -28,8 +31,14 @@
 
 		</div>
 
-
+		<h2>Tasks:</h2>
+		
 		{{ Invoices }}
+
+		<ul>
+			<li></li>
+		</ul>
+
 
 	</section>
 

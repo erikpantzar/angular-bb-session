@@ -2,21 +2,50 @@
 <html ng-app>
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="../normailze.css">
-	<link rel="stylesheet" href="../invoice.css">
+	<title>Directice 2 way data binding</title>
+	<link rel="stylesheet" href="../normalize.css">
+	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
-<body ng-init="invoices=[{name: 'krOnan', time: 1000}, {name: 'XXL', time: 300}, {name: 'Cramo', time: 900}, {name: 'Sibylla', time: 40}]">
+<body ng-init="Invoices = { tasks: [
+	{ name: 'Development', time: 20 },
+	{ name: 'Management', time: 12 },
+	{ name: 'Design', time: 35 }]}">
 
-	<input type="text" ng-model="name">
-	<p>Filter by: {{ name }}</p>
 
-	<ul>
-		<li ng-repeat="invoice in invoices | filter:name">
-			<h2>{{ invoice.name | uppercase }}</h2>
-			<p>Total time: {{ invoice.time }}</p>
-		</li>
-	</ul>
-	<script src="../angular.min.js"></script>
+	<section class="block">
+		<h1>NG Repeaters</h1>
+		<p>
+			We will repeat items from data in a repeater.
+		</p>
+
+
+		<div class="block__center">
+
+			<form class="outline" ng-submit="Invoices.tasks.push(invoice.task); invoice.task = null">
+				<input type="text" ng-model="invoice.task.name">
+				<input type="number" ng-model="invoice.task.time">
+				<p>{{ invoice.task }}</p>
+
+				<button type="submit" name="button">Add</button>
+			</form>
+
+		</div>
+
+		<h2>Tasks:</h2>
+
+		<ul>
+			<!-- maybe add index to show progress? -->
+			<li ng-repeat="task in Invoices.tasks">
+				{{ task }}
+			</li>
+		</ul>
+
+
+	</section>
+
+
+
+<script src="../angular.min.js"></script>
+
 </body>
 </html>

@@ -1,5 +1,39 @@
-body { background: #111; color: #ffe; font: 400 1em/1.5 sans-serif; 
-  padding: 2em;
+body { background: #eee; color: #111; font: 400 1em/1.5 sans-serif; margin: 0; padding: 0;}
+
+text-expander-directive,
+.expandable {
+	max-height: 200px; width: 300px; font-size: 2em; line-height: 1.5; overflow: hidden; display: block; margin: 1em auto; transition: all 0.3s linear;
+	cursor: pointer;
 }
-section { margin: 40px auto;  padding: 20px;  border: 1px solid white;}
-input { background: #111; box-shadow: none; color: #fff; border: 1px solid; padding: 4px; }
+
+text-expander-directive.expanded,
+.expandable.expanded { max-height: 500px; }
+
+.highlight {
+	background: yellow;
+}
+
+.block {
+	width: 100vw; height: 100vh; display: block; float: left;
+	box-sizing: border-box; padding: 20px 2% ;
+}
+
+form {
+	margin-bottom: 15px;
+	padding: 20px;
+}
+
+.outline {
+	border: 1px solid #ddd;
+}
+
+.block__center {
+	width: 80%;
+	max-width: 400px;
+	margin: auto;
+}
+
+
+.block__center:first {
+	margin-top: 2em;
+}
