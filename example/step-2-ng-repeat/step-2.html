@@ -10,31 +10,27 @@
 	{ name: 'Development', time: 20 },
 	{ name: 'Management', time: 12 },
 	{ name: 'Design', time: 35 }]}">
-
 	<section class="block">
 		<h1>NG Repeaters</h1>
-		<p>
-			We will repeat items from data in a repeater.
-		</p>
+		<p>We will repeat items from data in a repeater.</p>
 		<div class="block__center">
 			<form class="outline" ng-submit="Invoices.tasks.push(invoice.task); invoice.task = null">
 				<input type="text" ng-model="invoice.task.name">
 				<input type="number" ng-model="invoice.task.time">
 				<p>{{ invoice.task }}</p>
-
 				<button type="submit" name="button">Add</button>
 			</form>
 		</div>
-
 		<h2>Tasks:</h2>
 		<ul>
-			<!-- maybe add index to show progress? -->
+			<!-- add $index to show progress? -->
+			<!-- you can also add some filters limitTo:int -->
+			<!-- -->
 			<li ng-repeat="task in Invoices.tasks">
 				{{ task }}
 			</li>
 		</ul>
 	</section>
 <script src="../angular.min.js"></script>
-
 </body>
 </html>
