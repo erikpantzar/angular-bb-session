@@ -28,6 +28,9 @@
 #angular-bb-session img.data-bindings {
   width: 65%; }
 
+#angular-bb-session .fade {
+  opacity: .5; }
+
 /**
  * Solarized colors by Ethan Schoonover
  */
