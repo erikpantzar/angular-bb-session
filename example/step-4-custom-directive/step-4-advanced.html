@@ -31,11 +31,10 @@
 
 			<h2>Tasklist:</h2>
 			<ul>
-				<!-- maybe add index to show progress? -->
+				<!-- Custom attribute directive and Scope isolation -->
+				<!-- task-visual  visual="task.time" -->
 				<li ng-repeat="task in tasksVm.Invoices.tasks | orderBy:'name'">
-					<p>
-						{{ task.name | uppercase }} {{ task.time }}
-					</p>
+					{{ task.name }} {{ task.time }}
 				</li>
 			</ul>
 		</div>
@@ -45,7 +44,8 @@
 <script src="../angular.min.js"></script>
 <script type="text/javascript">
 	angular.module('app', [])
-		.controller('tasksController', tasks);
+		.controller('tasksController', tasks)
+		.directive('taskVisual', taskVisual);;
 
 	function tasks () {
 		var vm = this;
@@ -68,6 +68,26 @@
 
 		<!-- Do a remove  -->
 
+	}
+
+
+	<!--  Custom Directive  -->
+	function taskVisual () {
+		return {
+			restrict: "AE",
+			scope: {
+				visual: "="
+			},
+			link: link
+		};
+
+		function link (scope, element, attrs) {
+			element.css(
+				{ "width" : scope.visual * 12 + 'px',
+			 	"background": "yellow" }
+			);
+
+		}
 	}
 </script>
 

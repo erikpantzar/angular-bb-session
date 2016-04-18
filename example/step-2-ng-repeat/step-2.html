@@ -13,23 +13,33 @@
 	<section class="block">
 		<h1>NG Repeaters</h1>
 		<p>We will repeat items from data in a repeater.</p>
+		<!--
+			Addition from step 1:
+			Repeater of array
+			Submit directive<
+		-->
 		<div class="block__center">
 			<form class="outline" ng-submit="Invoices.tasks.push(invoice.task); invoice.task = null">
-				<input type="text" ng-model="invoice.task.name">
-				<input type="number" ng-model="invoice.task.time">
+				<h2>Add task</h2>
+				<input type="text" ng-model="invoice.task.name" placeholder="Taskname">
+				<input type="number" ng-model="invoice.task.time" placeholder="Time">
 				<p>{{ invoice.task }}</p>
-				<button type="submit" name="button">Add</button>
+				<button type="submit" name="button">Add task to invoice</button>
+
 			</form>
+
+			<h2>Tasklist:</h2>
+			<ul>
+				<!-- Show more filters -->
+				<!-- Advanced: Custom filters -->
+				<li ng-repeat="task in Invoices.tasks | orderBy:'name'">
+					<p>
+						{{ task.name | uppercase }} {{ task.time }}
+					</p>
+				</li>
+			</ul>
 		</div>
-		<h2>Tasks:</h2>
-		<ul>
-			<!-- add $index to show progress? -->
-			<!-- you can also add some filters limitTo:int -->
-			<!-- -->
-			<li ng-repeat="task in Invoices.tasks">
-				{{ task }}
-			</li>
-		</ul>
+
 	</section>
 <script src="../angular.min.js"></script>
 </body>
