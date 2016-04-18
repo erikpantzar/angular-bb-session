@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Service</title>
+</head>
+<body ng-controller="controller as ctrl">
+
+<ul>
+	<li ng-repeat="data in ctrl.data.Tasks">
+		{{ data }}
+	</li>
+</ul>
+
+<script src="../angular.min.js"></script>
+<script type="text/javascript">
+
+	angular.module('app', [])
+		.controller('tasksController', tasks)
+		.directive('taskVisual', taskVisual);
+
+	// tasks.$injector = ['service'];
+
+	function tasks () {
+		var vm = this;
+		vm.add = add;
+
+		// init data
+		var Tasks = { tasks: [
+			{ name: 'Development', time: 20 },
+			{ name: 'Management', time: 12 },
+			{ name: 'Design', time: 35 }]
+		};
+		
+		// service.get().then(function(response) {
+		//	vm.data = response.data;
+		// });
+
+		vm.Invoices = Invoices;
+
+		// methods
+		function add (task) {
+			vm.Invoices.tasks.push( task );
+			vm.task = {}; // reset
+		}
+
+		<!-- Do a remove  -->
+
+	}
+
+
+	<!--  Custom Directive  -->
+	function taskVisual () {
+		return {
+			restrict: "AE",
+			scope: {
+				visual: "="
+			},
+			link: link
+		};
+
+		function link (scope, element, attrs) {
+			element.css(
+				{ "width" : scope.visual * 12 + 'px',
+				"background": "yellow" }
+			);
+
+		}
+	}
+
+
+	angular.module('app')
+		.service('service', service);
+
+	service.$injector = ['$http'];
+
+	function service ($http) {
+		return {
+			get: get
+		};
+
+		function get() {
+			return $http.get('./json.json');
+		}
+	}
+
+</script>
+
+</body>
+</html>

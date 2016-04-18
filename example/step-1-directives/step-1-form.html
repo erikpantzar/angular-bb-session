@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-
 <html ng-app>
-
 <head>
 	<meta charset="UTF-8">
 	<title>Directice 2 way data binding</title>
 	<link rel="stylesheet" href="../normalize.css">
 	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
-<body>
+<body ng-init="Persons = []">
 
 	<section class="block">
 		<h1>Directive and Databinding</h1>
@@ -17,18 +15,20 @@
 		</p>
 
 		<div class="block__center">
-			<form class="outline">
+			<form class="outline" ng-submit="Persons.push({ name, age })">
 				<input type="text" ng-model="name" placeholder="name">
-				<input type="number" ng-model="age" placeholder="age">
+				<input type="text" ng-model="age" placeholder="age">
 
 				<div ng-if="name">
 					Hola <span ng-if="age>40">senior</span> {{ name }}!
 				</div>
 
-
 				{{ name }} {{ age }}
 			</form>
 		</div>
+
+		<h2>Persons</h2>
+		{{ Persons }}
 
 	</section>
 
