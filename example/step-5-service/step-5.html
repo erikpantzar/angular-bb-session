@@ -4,11 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Service</title>
 </head>
-<body ng-controller="controller as ctrl">
+<body ng-controller="tasksController as tasksVm">
+<h1>Service</h1>
+<ol>
+	<li>What is service?</li>
+	<li>Inject into controllers</li>
+	<li>Use service data</li>
+	<li>Profit!</li>
+</ol>
 
 <ul>
-	<li ng-repeat="data in ctrl.data.Tasks">
-		{{ data }}
+	<li ng-repeat="task in tasksVm.Tasks">
+		{{ task }}
 	</li>
 </ul>
 
@@ -16,31 +23,31 @@
 <script type="text/javascript">
 
 	angular.module('app', [])
-		.controller('tasksController', tasks)
+		.controller('tasksController', tasksController)
 		.directive('taskVisual', taskVisual);
 
-	// tasks.$injector = ['service'];
+	// tasks.$injector = ['service']; // DI
 
-	function tasks () {
+	function tasksController () {
 		var vm = this;
+		vm.Tasks = {};
 		vm.add = add;
 
 		// init data
-		var Tasks = { tasks: [
+		var Tasks = [
 			{ name: 'Development', time: 20 },
 			{ name: 'Management', time: 12 },
-			{ name: 'Design', time: 35 }]
-		};
+			{ name: 'Design', time: 35 }];
 		
 		// service.get().then(function(response) {
 		//	vm.data = response.data;
 		// });
 
-		vm.Invoices = Invoices;
+		vm.Tasks = Tasks;
 
 		// methods
 		function add (task) {
-			vm.Invoices.tasks.push( task );
+			vm.data.push( task );
 			vm.task = {}; // reset
 		}
 

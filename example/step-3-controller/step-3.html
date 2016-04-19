@@ -32,7 +32,7 @@
 			<h2>Tasklist:</h2>
 			<ul>
 				<!-- maybe add index to show progress? -->
-				<li ng-repeat="task in tasksVm.Invoices.tasks | orderBy:'name'">
+				<li ng-repeat="task in tasksVm.Tasks | orderBy:'name'">
 					<p>
 						{{ task.name | uppercase }} {{ task.time }}
 					</p>
@@ -44,30 +44,31 @@
 
 <script src="../angular.min.js"></script>
 <script type="text/javascript">
+	// Just accept that we write module
+	// Heres how to declare a controller to an app
 	angular.module('app', [])
-		.controller('tasksController', tasks);
+		.controller('tasksController', tasksController);
 
-	function tasks () {
-		var vm = this;
-		vm.add = add;
+	function tasksController () {
+		var vm = this; // scope obj
+		vm.add = add; // scope method
+		vm.Tasks = {};
 
 		// init data
-		var Invoices = { tasks: [
+		var Tasks = [
 			{ name: 'Development', time: 20 },
 			{ name: 'Management', time: 12 },
-			{ name: 'Design', time: 35 }]
-		};
+			{ name: 'Design', time: 35 }];
 
-		vm.Invoices = Invoices;
+		vm.Tasks = Tasks;
 
 		// methods
 		function add (task) {
-			vm.Invoices.tasks.push( task );
+			vm.Tasks.push( task );
 			vm.task = {}; // reset
 		}
 
 		<!-- Do a remove  -->
-
 	}
 </script>
 

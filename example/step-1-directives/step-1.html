@@ -18,16 +18,21 @@
 
 		<div class="block__center">
 			<form class="outline">
-				<input type="text" ng-model="name" placeholder="name">
-				<input type="number" ng-model="age" placeholder="age">
 
-				<div ng-if="name">
-					Hola <span ng-if="age>40">senior</span> {{ name }}!
-				</div>
+				<input type="text" ng-model="name"
+							 placeholder="name">
 
+				<input type="number" ng-model="age"
+							 placeholder="age">
 
 				{{ name }} {{ age }}
 			</form>
+
+
+			<div ng-if="name">
+				Hola <span ng-if="age>40">senior</span> {{ name }}!
+			</div>
+
 		</div>
 
 	</section>

@@ -14,9 +14,11 @@
 	<!-- controller as ctrl ?? -->
 	<!-- $scope vs "this" -->
 	<section class="block" ng-controller="tasksController as tasksVm">
-		<h1>Controller</h1>
+
+		<h1>Custom Directive #1</h1>
+
 		<p>
-			Here we separate logic from view to the controller.
+			Click to expand the text
 		</p>
 
 		<div class="block__center">
@@ -33,7 +35,7 @@
 			<ul>
 				<!-- Custom attribute directive and Scope isolation -->
 				<!-- task-visual  visual="task.time" -->
-				<li ng-repeat="task in tasksVm.Invoices.tasks | orderBy:'name'">
+				<li ng-repeat="task in tasksVm.Invoices.tasks | orderBy:'name'" task-visual visual="task.time">
 					{{ task.name }} {{ task.time }}
 				</li>
 			</ul>
@@ -44,10 +46,9 @@
 <script src="../angular.min.js"></script>
 <script type="text/javascript">
 	angular.module('app', [])
-		.controller('tasksController', tasks)
-		.directive('taskVisual', taskVisual);;
+		.controller('tasksController', tasksController);
 
-	function tasks () {
+	function tasksController () {
 		var vm = this;
 		vm.add = add;
 
@@ -71,14 +72,17 @@
 	}
 
 
+	angular.module('app')
+			.directive('taskVisual', taskVisual);
+
 	<!--  Custom Directive  -->
 	function taskVisual () {
 		return {
 			restrict: "AE",
 			scope: {
-				visual: "="
+				visual: "=" // @
 			},
-			link: link
+			link: link // hanterar DOM-manipulation
 		};
 
 		function link (scope, element, attrs) {

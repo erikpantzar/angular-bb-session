@@ -6,35 +6,38 @@
 	<link rel="stylesheet" href="../normalize.css">
 	<link rel="stylesheet" href="../examples.css" media="screen" title="no title" charset="utf-8">
 </head>
-<body ng-init="Invoices = { tasks: [
+
+<body ng-init="Tasks = [
 	{ name: 'Development', time: 20 },
 	{ name: 'Management', time: 12 },
-	{ name: 'Design', time: 35 }]}">
-	<section class="block">
+	{ name: 'Design', time: 35 }]">
+
+
+<section class="block">
 		<h1>NG Repeaters</h1>
 		<p>We will repeat items from data in a repeater.</p>
 		<!--
 			Addition from step 1:
 			Repeater of array
-			Submit directive<
+			ngSubmit directive
 		-->
 		<div class="block__center">
-			<form class="outline" ng-submit="Invoices.tasks.push(invoice.task); invoice.task = null">
+			<form class="outline" ng-submit="Tasks.push(task); task = null">
 				<h2>Add task</h2>
-				<input type="text" ng-model="invoice.task.name" placeholder="Taskname">
-				<input type="number" ng-model="invoice.task.time" placeholder="Time">
+				<input type="text" ng-model="task.name" placeholder="Taskname">
+				<input type="number" ng-model="task.time" placeholder="Time">
 				<p>{{ invoice.task }}</p>
 				<button type="submit" name="button">Add task to invoice</button>
-
+        <!-- ng-click -->
 			</form>
 
 			<h2>Tasklist:</h2>
 			<ul>
 				<!-- Show more filters -->
-				<!-- Advanced: Custom filters -->
-				<li ng-repeat="task in Invoices.tasks | orderBy:'name'">
+				<!-- Advanced: Custom filters (=$?)  -->
+				<li ng-repeat="task in Tasks | orderBy:'name'">
 					<p>
-						{{ task.name | uppercase }} {{ task.time }}
+						{{ task.name }}
 					</p>
 				</li>
 			</ul>
