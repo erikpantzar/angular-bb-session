@@ -40,70 +40,247 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Angular Brown Bag Session</h1>
-					<img src="./img/angular-logo.png" alt="">
+
+					<section>
+						<h1>Angular Brown Bag Session</h1>
+						<img src="./img/angular-logo.png" alt="">
+						<h4>
+							(Press space to step through slides in order)
+						</h4>
+					</section>
+
+					<section>
+						<h2>A talk by </h2>
+						<h1>Johan Forsman & Erik Pantzar</h1>
+					</section>
+
+					<section>
+						<h2>Table of contents</h2>
+						<ul>
+							<li>What is AngularJS? What makes is good?</li>
+							<li>How do you code AngularJS?</li>
+						</ul>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h1>What is AngularJS?</h1>
+					</section>
+
+
+					<section>
+						<h2>Definition:</h2>
+						<p class="description">
+							“AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures. The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views."
+						</p>
+
+					</section>
+
+					<section>
+						<p><strong>"AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures.</strong> <span class="fade">The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views.</span>"</p>
+						<p class="fragment"><strong>View - </strong>What the user sees.</p>
+						<p class="fragment"><strong>Model - </strong>The data shown to the user in the view and with which the user interacts</p>
+						<p class="fragment"><strong>Controller - </strong>Logic behind the view.</p>
+						<!-- <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p> -->
+					</section>
+
+					<section>
+						<p><span class="fade">"AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures.</span> <strong>The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views."</strong></p>
+						<p class="fragment"><strong>Directive - </strong>extend HTML with custom attributes and elements</p>
+						<p class="fragment"><strong>Two-way Data Binding... </strong></p>
+					</section>
+					<section>
+						<p style="text-align: center; margin-top: 60px;">One-Way Data Binding</p>
+						<img class="data-bindings" src="./img/one-way.png" alt="">
+					</section>
+					<section>
+						<p style="text-align: center; margin-top: 60px;">Two-Way Data Binding</p>
+						<img class="data-bindings" src="./img/two-way.png" alt="">
+					</section>
+				</section>
+
+
+				<section>
+
+					<section>
+
+						<h2>Directives, Data binding</h2>
+
+						<ul>
+							<li><a href="https://github.com/Orsman/angular-bb-session/blob/master/example/step-1-directives/step-1.html">Code Example</a></li>
+							<li><a href="https://docs.angularjs.org/api/ng/directive">Angular Docs: Directives in /ng/</a></li>
+						</ul>
+					</section>
+
+					<section>
+<pre><code>
+<div ng-app>
+
+	<!--  Model and the 2 way data binding -->
+	<input type="text" ng-model="name"
+		placeholder="name">
+	<input type="number" ng-model="age"
+		placeholder="age">
+
+	<!-- Present data live in these two -->
+	{{ name }} {{ age }}
+
+</div>
+</code></pre>
+
+					</section>
 				</section>
 
 				<section>
-					<h2>TODO:</h2>
-					<ul>
-						<li>Vad är AngularJS? ...och varför är det så bra?</li>
-						<li>Hur kodar man AngularJS?</li>
-					</ul>
-				</section>
+					<section>
 
-				<section>
-					<h1>Vad är Angular JS?</h1>
-				</section>
-				<section>
-					<h2>Skolboksdefintionen:</h2>
-					<p class="description">
-						“AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures. The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views."
-					</p>
-				</section>
-				<section>
-					<p><strong>"AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures.</strong> <span class="fade">The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views.</span>"</p>
-					<p class="fragment"><strong>View - </strong>What the user sees.</p>
-					<p class="fragment"><strong>Model - </strong>The data shown to the user in the view and with which the user interacts</p>
-					<p class="fragment"><strong>Controller - </strong>Logic behind the view.</p>
-					<!-- <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p> -->
-				</section>
-				<section>
-					<p><span class="fade">"AngularJS is a framework for client-side Model–View–Controller (MVC) and Model–View–ViewModel (MVVM) architectures.</span> <strong>The framework adapts and extends traditional HTML to present dynamic content through two-way data-binding that allows for the automatic synchronization of models and views."</strong></p>
-					<p class="fragment"><strong>Directive - </strong>extend HTML with custom attributes and elements</p>
-					<p class="fragment"><strong>Two-way Data Binding... </strong></p>
-				</section>
-				<section>
-					<p style="text-align: center; margin-top: 60px;">One-Way Data Binding</p>
-					<img class="data-bindings" src="./img/one-way.png" alt="">
-				</section>
-				<section>
-					<p style="text-align: center; margin-top: 60px;">Two-Way Data Binding</p>
-					<img class="data-bindings" src="./img/two-way.png" alt="">
-				</section>
-				<section>
-					<h2>Directives, Data binding</h2>
-					<a href="https://code.angularjs.org/1.4.9/docs/api">https://code.angularjs.org/1.4.9/docs/api</a>
-				</section>
 
-				<section>
 					<h2>NG-repeat, Filters</h2>
+					<ul>
+						<li><a href="https://github.com/Orsman/angular-bb-session/blob/master/example/step-2-ng-repeat/step-2.html">Code Example</a></li>
+						<li><a href="https://docs.angularjs.org/api/ng/directive/ngRepeat#!">Angular Docs: ngRepeat</a></li>
+					</ul>
+
+					</section>
+
+					<section>
+<pre><code class="html">
+	<div ng-app
+		ng-init="taskList = [
+		{ name: 'Development', time: 20 },
+		{ name: 'Management', time: 12 },
+		{ name: 'Design', time: 35 }]">>
+
+		<ul>
+		  <li ng-repeat="task in taskList">
+		    {{ task }}
+		  </li>
+		</ul>
+	</div>
+
+</code></pre>
+
+					</section>
 				</section>
 
 				<section>
-					<h2>Controllers</h2>
+					<section>
+						<h2>Controllers</h2>
+						<ul>
+							<li><a href="https://github.com/Orsman/angular-bb-session/blob/master/example/step-3-controller/step-3.html">Code Example</a></li>
+							<li><a href="https://docs.angularjs.org/guide/controller#!">Angular Docs: Understanding Controllers</a></li>
+						</ul>
+					</section>
+
+					<section>
+<pre><code class="html">
+	<div ng-app="app">
+
+		<ul ng-controller="controller as ctrl">
+		    <li ng-repeat="task in ctrl.taskList">
+			  {{ task }}
+		    </li>
+		</ul>
+	</div>
+</code></pre>
+
+<pre><code  class="javascript js">
+
+	// controller.js
+
+	angular.module('app', [])
+	  .controller('controller', ctrl);
+
+	function ctrl () {
+		var vm = this; // ViewModel
+ 		vm.taskList = [
+  		  { name: 'Development', time: 20 },
+		  { name: 'Management', time: 12 },
+		  { name: 'Design', time: 35 }
+		];
+	}
+
+</code></pre>
+					</section>
 				</section>
 
 				<section>
-					<h2>Custom Directives</h2>
+					<section>
+						<h2>Custom Directives</h2>
+						<ul>
+							<li><a href="https://github.com/Orsman/angular-bb-session/blob/master/example/step-4-custom-directive/step-4-advanced.html">Code Example</a></li>
+							<li><a href="https://docs.angularjs.org/guide/directive">Angular Docs: Creating Custom Directives</a></li>
+						</ul>
+					</section>
+
+					<section>
+<pre><code class=html>
+	<h2>Here we use the directive</h2>
+	<div task-visual visual="task.time">
+	  {{ task }}
+	</div>
+
+</code></pre>
+<pre><code class="js">
+
+	angular.module('app')
+	     .directive('taskVisual', taskVisual);
+
+	// custom directive
+	function taskVisual () {
+	  return {
+	    restrict: "AE", // Attribute and Element
+	    scope: {
+	       visual: "=" // @  // the scope for the directive
+	    },
+	    link: link // handles DOM-manipulation
+	  };
+
+	  function link (scope, element, attrs) {
+		element.css({
+		  "width" : scope.visual * 12 + 'px',
+		  "background": "yellow" });
+	   }
+	}
+</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Services</h2>
+						<ul>
+							<li><a href="https://github.com/Orsman/angular-bb-session/blob/master/example/step-5-service/step-5.html">Code Example</a></li>
+							<li><a href="https://docs.angularjs.org/guide/services#!">Angular Docs: Services</a></li>
+						</ul>
+					</section>
+					<section>
+	<pre><code class="javascript">
+
+	angular.module('app')
+	     .service('service', service);
+
+	service.$injector = ['$http'];
+
+	function service ($http) {
+		return {
+		    get: get
+		};
+
+		function get() {
+		    return $http.get('./json.json');
+		}
+	}
+
+	</code></pre>
+					</section>
+
 				</section>
 
 				<section>
-					<h2>Services</h2>
-				</section>
-
-				<section>
-					<h2>Länkar etc.</h2>
+					<h2>Links / Further reading</h2>
 					<a href="http://github.com/orsman/angular-bb-session">github.com/orsman/angular-bb-session</a>
 				</section>
 			</div>
